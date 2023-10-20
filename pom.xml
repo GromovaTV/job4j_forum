@@ -16,6 +16,7 @@
     <maven.compiler.source>14</maven.compiler.source>
     <maven.compiler.target>14</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spring.version>5.1.2.RELEASE</spring.version>
   </properties>
   <dependencies>
     <dependency>
@@ -50,7 +51,12 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
   </dependencies>
+
   <build>
     <plugins>
       <plugin>
