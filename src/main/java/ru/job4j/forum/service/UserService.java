@@ -25,25 +25,4 @@ public class UserService {
             users.save(user);
         }
     }
-
-//    private static AtomicInteger USER_ID = new AtomicInteger(0);
-//    private final Map<Integer, User> users = new HashMap<>();
-//
-//    public UserService() {
-//    }
-//
-//    public Collection<User> getAll() {
-//        return users.values();
-//    }
-//
-//    public User get(Integer id) {
-//        return users.get(id);
-//    }
-//
-//    public void save(User user) {
-//        if (user.getId() == 0) {
-//            user.setId(USER_ID.incrementAndGet());
-//        }
-//        users.put(user.getId(), user);
-//    }
 }
