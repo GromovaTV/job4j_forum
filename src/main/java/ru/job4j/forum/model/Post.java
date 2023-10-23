@@ -1,18 +1,24 @@
 package ru.job4j.forum.model;
 
-import java.util.Calendar;
+import javax.persistence.*;
+import java.util.Date;
 import java.util.Objects;
 
+@Entity
+@Table(name = "posts")
 public class Post {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private String desc;
-    private Calendar created;
+    private String description;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date created;
 
     public static Post of(String name, String desc) {
         Post post = new Post();
         post.name = name;
-        post.desc = desc;
+        post.description = desc;
 //        post.created = Calendar.getInstance();
 //        post.created.setTimeInMillis(System.currentTimeMillis());
         return post;
@@ -34,19 +40,19 @@ public class Post {
         this.name = name;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public Calendar getCreated() {
+    public Date getCreated() {
         return created;
     }
 
-    public void setCreated(Calendar created) {
+    public void setCreated(Date created) {
         this.created = created;
     }
 
@@ -57,13 +63,13 @@ public class Post {
         Post post = (Post) o;
         return id == post.id &&
                 Objects.equals(name, post.name) &&
-                Objects.equals(desc, post.desc) &&
+                Objects.equals(description, post.description) &&
                 Objects.equals(created, post.created);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, desc, created);
+        return Objects.hash(id, name, description, created);
     }
 
     @Override
@@ -71,7 +77,7 @@ public class Post {
         return "Post{"
                 + "id=" + id
                 + ", name='" + name + '\''
-                + ", desc='" + desc + '\''
+                + ", description='" + description + '\''
                 + ", created=" + created +
                 '}';
     }

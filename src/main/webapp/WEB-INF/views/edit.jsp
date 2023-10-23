@@ -13,7 +13,7 @@
         </tr>
         <tr>
             <td>Description</td>
-            <td><input type='text' name='desc' value="<c:out value="${post.desc}"/>"></td>
+            <td><input type='text' name='description' value="<c:out value="${post.description}"/>"></td>
         </tr>
         <tr>
             <td colspan='2'><input name="submit" type="submit" value="Сохранить" /></td>

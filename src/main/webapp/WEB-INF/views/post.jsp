@@ -34,7 +34,7 @@
                     <c:out value="${post.name}"/>
                 </td>
                 <td>
-                    <c:out value="${post.desc}"/>
+                    <c:out value="${post.description}"/>
                 </td>
             </tr>
             </tbody>
