@@ -1,12 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <html>
 <body>
-<a href='<c:url value="/reg"/>'>Регистрация</a>
-<c:if test="${not empty errorMessage}">
+<c:if test="${not empty errorMessge}">
     <div style="color:red; font-weight: bold; margin: 30px 0px;">
-            ${errorMessage}
+            ${errorMessge}
     </div>
 </c:if>
 <form name='login' action="<c:url value='/login'/>" method='POST'>
