@@ -1,4 +1,4 @@
-package ru.job4j.forum;
+package ru.job4j.forum.control;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.security.core.Authentication;
