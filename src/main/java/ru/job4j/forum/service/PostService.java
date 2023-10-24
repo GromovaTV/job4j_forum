@@ -24,13 +24,15 @@ public class PostService {
         return posts.findById(id).get();
     }
 
-    public void save(Post post) {
+    public Post save(Post post) {
         if (post.getId() == 0) {
             post.setCreated(Date.from(Instant.now()));
 
         } else {
             post.setCreated(posts.findById(post.getId()).get().getCreated());
         }
-        posts.save(post);
+        Post save = posts.save(post);
+        System.out.println("Save: " + save);
+        return save;
     }
 }
