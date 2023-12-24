@@ -47,6 +47,7 @@ git clone https://github.com/GromovaTV/job4j_forum
 
 *2. Build the project:*
 ````
+cd job4j_forum
 mvn package -Dmaven.test.skip=true
 ````
 
@@ -59,6 +60,7 @@ docker build -t job4j_forum .
 ````
 docker-compose up
 ````
+
 ### Installing K8s
 *1. Download:*
 ````
@@ -70,7 +72,7 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s http
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 ````
 
-### Installing minikube
+### Installing Minikube
 *1. Download:*
 ````
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
