@@ -18,9 +18,8 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // Есть поле authority в классе Authority.
-        // Если authority - это строка, то можно вернуть её в виде SimpleGrantedAuthority.
-        return Collections.singleton(new SimpleGrantedAuthority(user.getAuthority().getAuthority()));
+        return Collections.singleton(
+                new SimpleGrantedAuthority(user.getAuthority().getAuthority()));
     }
 
     @Override

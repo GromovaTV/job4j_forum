@@ -18,7 +18,8 @@ public class RegControl {
     private final UserRepository users;
     private final AuthorityRepository authorities;
 
-    public RegControl(PasswordEncoder encoder, UserRepository users, AuthorityRepository authorities) {
+    public RegControl(PasswordEncoder encoder, UserRepository users,
+                      AuthorityRepository authorities) {
         this.encoder = encoder;
         this.users = users;
         this.authorities = authorities;

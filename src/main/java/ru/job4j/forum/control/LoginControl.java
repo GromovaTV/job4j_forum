@@ -17,19 +17,20 @@ public class LoginControl {
                             @RequestParam(value = "logout", required = false) String logout,
                             Model model) {
         String errorMessge = null;
-        if(error != null) {
+        if (error != null) {
             errorMessge = "Username or Password is incorrect !!";
         }
-        if(logout != null) {
+        if (logout != null) {
             errorMessge = "You have been successfully logged out !!";
         }
         model.addAttribute("errorMessge", errorMessge);
         return "login";
     }
-    @RequestMapping(value="/logout", method = RequestMethod.GET)
-    public String logoutPage (HttpServletRequest request, HttpServletResponse response) {
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth != null){
+        if (auth != null) {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
         return "redirect:/login?logout=true";
