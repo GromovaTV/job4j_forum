@@ -96,25 +96,25 @@ minikube start
 
 *2. Create a secret from the file postgresdb-secret.yml:*
 ````
-kubectl apply -f postgresdb-secret.yml
+kubectl apply -f forum-postgresdb-secret.yml
 ````
 
 *3. Introduce a ConfigMap into the cluster:*
 ````
-kubectl apply -f postgresdb-configmap.yml
+kubectl apply -f forum-postgresdb-configmap.yml
 ````
 
 *4. Start the deployment:*
 ````
-kubectl apply -f postgresdb-deployment.yml
+kubectl apply -f forum-postgresdb-deployment.yml
 ````
 
 *5. Initiate the deployment of the Spring Boot application:*
 ````
-kubectl apply -f spring-boot-deployment.yml
+kubectl apply -f forum-spring-deployment.yml
 ````
 
 *6. Obtain the URL to connect to the service externally:*
 ````
-minikube service spring-boot-service
+minikube service forum-spring-service
 ````

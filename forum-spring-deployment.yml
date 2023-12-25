@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-boot
+  name: forum-spring
   labels:
-    app: spring-boot
+    app: forum-spring
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: spring-boot
+      app: forum-spring
   template:
     metadata:
       labels:
-        app: spring-boot
+        app: forum-spring
     spec:
       containers:
-        - name: spring-boot
+        - name: forum-spring
           image: tatyana8/job4j_forum
           ports:
             - containerPort: 8080
@@ -23,27 +23,27 @@ spec:
             - name: SPRING_DATASOURCE_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: postgresdb-secret
+                  name: forum-postgresdb-secret
                   key: postgres-username
             - name: SPRING_DATASOURCE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: postgresdb-secret
+                  name: forum-postgresdb-secret
                   key: postgres-password
             - name: SPRING_DATASOURCE_URL
               valueFrom:
                 configMapKeyRef:
-                  name: postgresdb-configmap
+                  name: forum-postgresdb-configmap
                   key: database_url
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: spring-boot-service
+  name: forum-service
 spec:
   selector:
-    app: spring-boot
+    app: forum-spring
   type: LoadBalancer
   ports:
     - protocol: TCP

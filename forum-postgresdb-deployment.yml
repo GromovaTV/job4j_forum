@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: postgresdb-deployment
+  name: forum-postgresdb-deployment
   labels:
     app: postgresdb
 spec:
@@ -23,24 +23,24 @@ spec:
             - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:
-                  name: postgresdb-secret
+                  name: forum-postgresdb-secret
                   key: postgres-username
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: postgresdb-secret
+                  name: forum-postgresdb-secret
                   key: postgres-password
             - name: POSTGRES_DB
               valueFrom:
                 configMapKeyRef:
-                  name: postgresdb-configmap
+                  name: forum-postgresdb-configmap
                   key: postgres-db
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: postgresdb-service
+  name: forum-postgresdb-service
 spec:
   selector:
     app: postgresdb
