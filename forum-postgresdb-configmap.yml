@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: forum-postgresdb-configmap
 data:
-  database_url: jdbc:postgresql://postgresdb-service/job4j_forum
+  database_url: jdbc:postgresql://forum-postgresdb-service/job4j_forum
   postgres-db: job4j_forum

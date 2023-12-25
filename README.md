@@ -116,5 +116,5 @@ kubectl apply -f forum-spring-deployment.yml
 
 *6. Obtain the URL to connect to the service externally:*
 ````
-minikube service forum-spring-service
+minikube service forum-service
 ````

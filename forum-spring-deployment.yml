@@ -25,11 +25,13 @@ spec:
                 secretKeyRef:
                   name: forum-postgresdb-secret
                   key: postgres-username
+
             - name: SPRING_DATASOURCE_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: forum-postgresdb-secret
                   key: postgres-password
+
             - name: SPRING_DATASOURCE_URL
               valueFrom:
                 configMapKeyRef:

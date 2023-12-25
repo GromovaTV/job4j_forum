@@ -20,16 +20,18 @@ spec:
           ports:
             - containerPort: 5432
           env:
-            - name: POSTGRES_USER
+            - name: POSTGRES_USER # Переменная, которую хотим заменить в properties
               valueFrom:
                 secretKeyRef:
-                  name: forum-postgresdb-secret
-                  key: postgres-username
+                  name: forum-postgresdb-secret # Указывает на secret файл деплоймента
+                  key: postgres-username # Указывает на переменную в secret из которой берем значение
+
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: forum-postgresdb-secret
                   key: postgres-password
+
             - name: POSTGRES_DB
               valueFrom:
                 configMapKeyRef:
