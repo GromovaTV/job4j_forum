@@ -6,6 +6,7 @@ import ru.job4j.forum.store.UserRepository;
 
 @Service
 public class UserService {
+
     private final UserRepository users;
 
     public UserService(UserRepository users) {

@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import ru.job4j.forum.model.User;
 import ru.job4j.forum.store.UserRepository;
+
 import java.util.Optional;
 
 @Service
@@ -18,7 +19,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> optionalUser = userRepository.findByUsername(username);
-
         if (optionalUser.isPresent()) {
             return new UserDetailsImpl(optionalUser.get());
         } else {

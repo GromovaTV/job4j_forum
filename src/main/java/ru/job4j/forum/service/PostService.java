@@ -1,13 +1,20 @@
 package ru.job4j.forum.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import ru.job4j.forum.model.Post;
 import ru.job4j.forum.store.PostRepository;
+
 import java.time.Instant;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @Service
 public class PostService {
+
+    private static final Logger LOG = LoggerFactory.getLogger(PostService.class.getName());
     private final PostRepository posts;
 
     public PostService(PostRepository posts) {
@@ -32,7 +39,7 @@ public class PostService {
             post.setCreated(posts.findById(post.getId()).get().getCreated());
         }
         Post save = posts.save(post);
-        System.out.println("Save: " + save);
+        LOG.info("Save: " + save);
         return save;
     }
 }

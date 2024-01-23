@@ -8,15 +8,20 @@ In the forum you can discuss topics in a project with another users:
 
 ## Dependencies
 
-* Spring Boot 2 
+* Kubernetes
+* Docker
+* Spring Boot
 * Spring Security
-* Spring Data JPA with Hibernate + PostgreSQL
-* Java 11
+* Spring Data JPA
+* Hibernate, PostgreSQL
+* Java
 * JSP(JSTL)
 * Junit, Mockito, H2
-* Maven
-* Log4j
+* Slf4j, Log4j
 * Liquibase
+* Lombok
+* Maven
+* Checkstyle
 
 ## Installation Instructions
 
